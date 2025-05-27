@@ -75,3 +75,12 @@ flutter_launcher_icons:
   remove_alpha_ios: true
   adaptive_icon_background: "#ffffff"
   adaptive_icon_foreground: "assets/images/app_icon.png"
+
+flutter_assets:
+  assets_path: assets/images/
+  output_path: lib/core/styles/images/
+  filename: app_images.dart
+  classname: AppImages
+  field_prefix:
+    from: assetsImages
+    to:
