@@ -1,6 +1,7 @@
 import 'package:byzaar/app/byzaar.dart';
 import 'package:byzaar/core/app/env.variable.dart';
 import 'package:byzaar/core/app/bloc_observer.dart';
+import 'package:byzaar/core/app/internet_settings/connectivity_controller.dart';
 import 'package:byzaar/core/common/widgets/error_widget.dart';
 import 'package:byzaar/core/dependancy_injection/service_locator.dart';
 import 'package:byzaar/core/app/app_cubit/app_cubit.dart';
@@ -13,11 +14,10 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   flutterErrorWidget();
   AppBlocObserver.init();
-  await Future.wait([
-    EnvVariable.instance.init(envType: EnvTypeEnum.dev),
-    setupInjector(),
-    HiveDatabase().init(),
-  ]);
+  await setupInjector();
+  await HiveDatabase().init();
+  ConnectivityController.instance.init();
+  // await EnvVariable.instance.init(envType: EnvTypeEnum.dev);
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitDown,
     DeviceOrientation.portraitUp,
