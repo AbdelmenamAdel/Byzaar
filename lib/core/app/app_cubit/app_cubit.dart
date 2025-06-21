@@ -14,8 +14,6 @@ class AppCubit extends Cubit<AppState> {
 
   ThemeEnum appTheme = ThemeEnum.system;
 
-  final LocalStorage localStorage = sl<LocalStorage>();
-
 //Theme Mode
   Future<void> changeAppThemeMode({ThemeEnum? selectedMode}) async {
     if (selectedMode != null) {
@@ -32,12 +30,12 @@ class AppCubit extends Cubit<AppState> {
     }
 
     // Save selected mode to local storage
-    await localStorage.setString(SecureKeys.themeMode, appTheme.name);
+    sl<LocalStorage>().setString(SecureKeys.themeMode, appTheme.name);
     emit(ThemeChangeModeState(appTheme: appTheme));
   }
 
   Future<void> getSavedThemeMode() async {
-    final cachedMode = await localStorage.getString(SecureKeys.themeMode);
+    final cachedMode = sl<LocalStorage>().getString(SecureKeys.themeMode);
     if (cachedMode != null) {
       appTheme = ThemeEnum.values.firstWhere(
         (e) => e.name == cachedMode,
@@ -55,14 +53,14 @@ class AppCubit extends Cubit<AppState> {
   void updateLang(String code) {
     emit(ChangeLangLoading());
     langCode = code;
-    localStorage.changLanguage(code);
+    sl<LocalStorage>().changLanguage(code);
     emit(ChangeLangSuccess());
   }
 
   //! update langauge and use it while starting app
-  void getLang() async {
+  void getLang() {
     emit(ChangeLangLoading());
-    final cachedLang = await localStorage.getCachedLanguage();
+    final cachedLang = sl<LocalStorage>().getCachedLanguage();
     langCode = cachedLang;
     emit(ChangeLangSuccess());
   }
