@@ -1,5 +1,5 @@
 import 'package:byzaar/core/styles/texts/app_text_styles.dart';
-import 'package:byzaar/core/styles/colors/app_colors.dart';
+import 'package:byzaar/core/utils/app_colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
