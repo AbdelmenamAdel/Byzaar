@@ -14,7 +14,7 @@ class NoInternet extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(AppImages.wifiOff),
+            Image.asset(Assets.imagesWifiOff),
           ],
         ),
       ),
