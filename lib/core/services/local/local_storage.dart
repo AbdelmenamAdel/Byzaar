@@ -1,48 +1,40 @@
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LocalStorage {
-  final FlutterSecureStorage secureStorage;
-
+  final SharedPreferences sharedInstance;
   LocalStorage({
-    required this.secureStorage,
+    required this.sharedInstance,
   });
 
-  Future<void> setString(String key, String value) async {
-    await secureStorage.write(key: key, value: value);
+  void setString(String key, String value) {
+    sharedInstance.setString(key, value);
   }
 
-  Future<String?> getString(String key) async {
-    return await secureStorage.read(key: key);
+  getString(String key) {
+    return sharedInstance.getString(key);
   }
 
-  Future<void> setBool(String key, bool valu) async {
-    String value = valu == true ? 'true' : 'false';
-    await secureStorage.write(key: key, value: value);
+  void setBool(String key, bool value) {
+    sharedInstance.setBool(key, value);
   }
 
-  Future<bool?> getBool(String key) async {
-    final value = await secureStorage.read(key: key);
-    if (value == 'true') return true;
-    if (value == 'false') return false;
-    return null;
+  bool getBool(String key) {
+    return sharedInstance.getBool(key) ?? false;
   }
 
-  Future<void> delete(String key) async {
-    return await secureStorage.delete(key: key);
-  }
+  static final String _cachedCode = 'cachedCode';
 
-  final String _cachedCode = 'cachedCode';
-
-  Future<String> getCachedLanguage() async {
-    final code = await secureStorage.read(key: _cachedCode);
+  String getCachedLanguage() {
+    final code = sharedInstance.getString(_cachedCode);
     return code ?? 'en';
   }
 
-  Future<void> changLanguage(String code) async {
-    await secureStorage.write(key: _cachedCode, value: code);
+  void changLanguage(String code) {
+    sharedInstance.setString(_cachedCode, code);
   }
 
-  Future<void> clearSecureStorage() async {
-    await secureStorage.deleteAll();
+  void clearSecureStorage() {
+    sharedInstance.clear();
   }
 }
