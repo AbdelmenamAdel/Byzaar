@@ -1,5 +1,4 @@
 import 'package:achievement_view/achievement_view.dart';
-import 'package:byzaar/core/styles/colors/colors_dark.dart';
 import 'package:flutter/material.dart';
 
 void showAchievementView({
@@ -15,6 +14,6 @@ void showAchievementView({
     onTap: onTap,
     alignment: alignment ?? Alignment.topCenter,
     subTitle: subTitle,
-    color: color ?? ColorsDark.black1,
+    color: color ?? Colors.black54,
   ).show(context);
 }
