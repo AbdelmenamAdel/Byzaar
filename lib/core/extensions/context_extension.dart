@@ -1,19 +1,8 @@
 import 'package:byzaar/core/language/app_Localizations.dart';
-import 'package:byzaar/core/styles/theme/assets_extension.dart';
-import 'package:byzaar/core/styles/theme/color_extension.dart';
 import 'package:flutter/material.dart';
 
 extension ContextExt on BuildContext {
-  //color
-  AppColors get color => Theme.of(this).extension<AppColors>()!;
-
-  // images
-  AppAssets get assets => Theme.of(this).extension<AppAssets>()!;
-
-  // style
-  TextStyle get textStyle => Theme.of(this).textTheme.displaySmall!;
-
-//Language
+  //Language
   String translate(String langkey) {
     return AppLocalizations.of(this)!.translate(langkey).toString();
   }
