@@ -1,5 +1,7 @@
+import 'package:byzaar/core/routes/app_routes.dart';
 import 'package:byzaar/core/styles/texts/app_text_styles.dart';
 import 'package:byzaar/core/utils/app_colors.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class DontHaveAnAccountWidget extends StatelessWidget {
@@ -9,15 +11,33 @@ class DontHaveAnAccountWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text.rich(TextSpan(children: [
+    return Text.rich(
       TextSpan(
-        text: " لا تمتلك حساب؟ ",
-        style: TextStyles.semiBold16.copyWith(color: Color(0XFF949D9E)),
+        children: [
+          TextSpan(
+            text: 'لا تمتلك حساب؟',
+            style: TextStyles.semiBold16.copyWith(
+              color: const Color(0xFF949D9E),
+            ),
+          ),
+          TextSpan(
+            text: ' ',
+            style: TextStyles.semiBold16.copyWith(
+              color: const Color(0xFF616A6B),
+            ),
+          ),
+          TextSpan(
+            recognizer: TapGestureRecognizer()
+              ..onTap = () {
+                Navigator.pushNamed(context, AppRoutes.signUp);
+              },
+            text: 'قم بإنشاء حساب',
+            style:
+                TextStyles.semiBold16.copyWith(color: AppColors.primaryColor),
+          ),
+        ],
       ),
-      TextSpan(
-        text: "قم بإنشاء حساب",
-        style: TextStyles.semiBold16.copyWith(color: AppColors.primaryColor),
-      ),
-    ]));
+      textAlign: TextAlign.center,
+    );
   }
 }
