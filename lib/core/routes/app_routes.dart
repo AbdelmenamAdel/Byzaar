@@ -1,6 +1,7 @@
 import 'package:byzaar/core/Routes/base_routes.dart';
 import 'package:byzaar/core/common/screens/page_under_build.dart';
 import 'package:byzaar/features/auth/presentation/views/login_view.dart';
+import 'package:byzaar/features/auth/presentation/views/signup_view.dart';
 import 'package:byzaar/features/on_boarding/presentation/views/on_boarding_view.dart';
 import 'package:byzaar/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +21,8 @@ class AppRoutes {
         return BaseRoute(page: const OnBoardingView());
       case login:
         return BaseRoute(page: const LoginView());
+      case signUp:
+        return BaseRoute(page: const SignupView());
 
       default:
         return BaseRoute(page: const PageUnderBuildScreen());
