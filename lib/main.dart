@@ -18,8 +18,11 @@ Future<void> main() async {
   );
   await setupInjector();
   await ConnectivityController.instance.init();
-  // await _initDependencies();
-  // await _setDeviceOrientation();
+
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
 
   runApp(const AppRoot());
 }
@@ -35,15 +38,6 @@ void _setupGlobalConfigs() {
     ),
   );
 }
-
-// Future<void> _initDependencies() async {}
-
-// Future<void> _setDeviceOrientation() {
-//   return SystemChrome.setPreferredOrientations([
-//     DeviceOrientation.portraitUp,
-//     DeviceOrientation.portraitDown,
-//   ]);
-// }
 
 class AppRoot extends StatelessWidget {
   const AppRoot({super.key});
