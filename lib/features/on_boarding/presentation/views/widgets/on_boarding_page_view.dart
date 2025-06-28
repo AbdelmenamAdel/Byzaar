@@ -1,6 +1,6 @@
-import 'package:byzaar/core/styles/images/app_images.dart';
-import 'package:byzaar/core/styles/texts/app_text_styles.dart';
-import 'package:byzaar/core/utils/app_colors.dart';
+import 'package:fruit_hub/core/styles/images/app_images.dart';
+import 'package:fruit_hub/core/styles/texts/app_text_styles.dart';
+import 'package:fruit_hub/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
 import 'page_view_item.dart';

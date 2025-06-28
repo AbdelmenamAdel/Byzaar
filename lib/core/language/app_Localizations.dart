@@ -1,5 +1,5 @@
 import 'dart:convert' show json;
-import 'package:byzaar/core/language/app_localisations_delegate.dart';
+import 'package:fruit_hub/core/language/app_localisations_delegate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

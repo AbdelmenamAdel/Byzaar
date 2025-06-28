@@ -1,4 +1,4 @@
-import 'package:byzaar/core/utils/app_colors.dart';
+import 'package:fruit_hub/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
 ThemeData themeDark() {

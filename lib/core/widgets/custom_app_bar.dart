@@ -1,6 +1,6 @@
-import 'package:byzaar/core/styles/texts/app_text_styles.dart';
+import 'package:fruit_hub/core/styles/texts/app_text_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:byzaar/core/widgets/notification_widget.dart';
+import 'package:fruit_hub/core/widgets/notification_widget.dart';
 
 AppBar buildAppBar(context,
     {required String title,

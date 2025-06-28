@@ -1,9 +1,9 @@
-import 'package:byzaar/core/Routes/app_routes.dart';
-import 'package:byzaar/core/app/internet_settings/connectivity_controller.dart';
-import 'package:byzaar/core/app/internet_settings/no_internet.dart';
-import 'package:byzaar/core/language/app_Localizations.dart';
-import 'package:byzaar/core/app/app_cubit/app_cubit.dart';
-import 'package:byzaar/core/styles/theme/app_theme.dart';
+import 'package:fruit_hub/core/Routes/app_routes.dart';
+import 'package:fruit_hub/core/app/internet_settings/connectivity_controller.dart';
+import 'package:fruit_hub/core/app/internet_settings/no_internet.dart';
+import 'package:fruit_hub/core/language/app_Localizations.dart';
+import 'package:fruit_hub/core/app/app_cubit/app_cubit.dart';
+import 'package:fruit_hub/core/styles/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';

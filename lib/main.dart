@@ -1,19 +1,24 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import 'package:byzaar/app/fruit_hub.dart';
-import 'package:byzaar/core/app/app_cubit/app_cubit.dart';
-import 'package:byzaar/core/app/bloc_observer.dart';
-import 'package:byzaar/core/app/internet_settings/connectivity_controller.dart';
-import 'package:byzaar/core/common/widgets/error_widget.dart';
-import 'package:byzaar/core/dependancy_injection/service_locator.dart';
+import 'package:fruit_hub/app/fruit_hub.dart';
+import 'package:fruit_hub/core/app/app_cubit/app_cubit.dart';
+import 'package:fruit_hub/core/app/bloc_observer.dart';
+import 'package:fruit_hub/core/app/internet_settings/connectivity_controller.dart';
+import 'package:fruit_hub/core/common/widgets/error_widget.dart';
+import 'package:fruit_hub/core/services/dependancy_injection/service_locator.dart';
+import 'package:fruit_hub/firebase_options.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   _setupGlobalConfigs();
-  await _initDependencies();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  await setupInjector();
+  await ConnectivityController.instance.init();
+  // await _initDependencies();
   // await _setDeviceOrientation();
 
   runApp(const AppRoot());
@@ -31,10 +36,7 @@ void _setupGlobalConfigs() {
   );
 }
 
-Future<void> _initDependencies() async {
-  await setupInjector();
-  await ConnectivityController.instance.init();
-}
+// Future<void> _initDependencies() async {}
 
 // Future<void> _setDeviceOrientation() {
 //   return SystemChrome.setPreferredOrientations([

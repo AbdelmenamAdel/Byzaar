@@ -1,4 +1,4 @@
-import 'package:byzaar/core/styles/texts/app_text_styles.dart';
+import 'package:fruit_hub/core/styles/texts/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class OrDivider extends StatelessWidget {

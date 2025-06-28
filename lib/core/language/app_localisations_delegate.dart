@@ -1,4 +1,4 @@
-import 'package:byzaar/core/language/app_Localizations.dart';
+import 'package:fruit_hub/core/language/app_Localizations.dart';
 import 'package:flutter/material.dart' show Locale, LocalizationsDelegate;
 
 // Defining a custom LocalizationsDelegate for AppLocalizations.

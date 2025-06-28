@@ -1,9 +1,10 @@
-import 'package:byzaar/constants.dart';
-import 'package:byzaar/core/dependancy_injection/service_locator.dart';
-import 'package:byzaar/core/extensions/context_extension.dart';
-import 'package:byzaar/core/routes/app_routes.dart';
-import 'package:byzaar/core/services/local/local_storage.dart';
-import 'package:byzaar/core/styles/images/app_images.dart';
+import 'package:fruit_hub/constants.dart';
+import 'package:fruit_hub/core/services/backend/firebase_auth_service.dart';
+import 'package:fruit_hub/core/services/dependancy_injection/service_locator.dart';
+import 'package:fruit_hub/core/styles/extensions/context_extension.dart';
+import 'package:fruit_hub/core/routes/app_routes.dart';
+import 'package:fruit_hub/core/services/local/local_storage.dart';
+import 'package:fruit_hub/core/styles/images/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:svg_flutter/svg.dart';
 
@@ -47,16 +48,17 @@ class _SplashViewBodyState extends State<SplashViewBody> {
         sl<LocalStorage>().getBool(kIsOnBoardingViewSeen);
     Future.delayed(const Duration(seconds: 3), () {
       if (isOnBoardingViewSeen) {
-        // var isLoggedIn = FirebaseAuthService().isLoggedIn();
+        var isLoggedIn = FirebaseAuthService().isLoggedIn();
 
-        // if (isLoggedIn) {
-        //   Navigator.pushReplacementNamed(context, MainView.routeName);
-        // } else {
-
-        if (mounted) {
-          context.pushReplacementNamed(AppRoutes.login);
+        if (isLoggedIn) {
+          if (mounted) {
+            context.pushReplacementNamed(AppRoutes.main);
+          }
+        } else {
+          if (mounted) {
+            context.pushReplacementNamed(AppRoutes.login);
+          }
         }
-        // }
       } else {
         if (mounted) {
           context.pushReplacementNamed(AppRoutes.onBoarding);

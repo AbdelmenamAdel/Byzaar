@@ -1,9 +1,9 @@
-import 'package:byzaar/constants.dart';
-import 'package:byzaar/core/dependancy_injection/service_locator.dart';
-import 'package:byzaar/core/extensions/context_extension.dart';
-import 'package:byzaar/core/routes/app_routes.dart';
-import 'package:byzaar/core/services/local/local_storage.dart';
-import 'package:byzaar/core/styles/texts/app_text_styles.dart';
+import 'package:fruit_hub/constants.dart';
+import 'package:fruit_hub/core/services/dependancy_injection/service_locator.dart';
+import 'package:fruit_hub/core/styles/extensions/context_extension.dart';
+import 'package:fruit_hub/core/routes/app_routes.dart';
+import 'package:fruit_hub/core/services/local/local_storage.dart';
+import 'package:fruit_hub/core/styles/texts/app_text_styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';

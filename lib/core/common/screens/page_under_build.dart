@@ -1,4 +1,4 @@
-import 'package:byzaar/core/styles/images/app_images.dart';
+import 'package:fruit_hub/core/styles/images/app_images.dart';
 import 'package:flutter/material.dart';
 
 class PageUnderBuildScreen extends StatelessWidget {

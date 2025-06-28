@@ -1,4 +1,4 @@
-import 'package:byzaar/core/language/app_Localizations.dart';
+import 'package:fruit_hub/core/language/app_Localizations.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 

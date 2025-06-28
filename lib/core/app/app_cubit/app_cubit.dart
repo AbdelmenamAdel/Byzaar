@@ -1,6 +1,6 @@
-import 'package:byzaar/core/dependancy_injection/service_locator.dart';
-import 'package:byzaar/core/services/local/local_storage.dart';
-import 'package:byzaar/core/services/local/secure_keys.dart';
+import 'package:fruit_hub/core/services/dependancy_injection/service_locator.dart';
+import 'package:fruit_hub/core/services/local/local_storage.dart';
+import 'package:fruit_hub/core/services/local/secure_keys.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

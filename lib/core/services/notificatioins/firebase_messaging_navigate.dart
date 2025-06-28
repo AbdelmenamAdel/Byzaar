@@ -1,5 +1,5 @@
-// import 'package:byzaar/core/routes/app_routes.dart';
-// import 'package:byzaar/core/services/notificatioins/local_notfication_service.dart';
+// import 'package:fruit_hub/core/routes/app_routes.dart';
+// import 'package:fruit_hub/core/services/notificatioins/local_notfication_service.dart';
 // import 'package:flutter/material.dart';
 
 // class FirebaseMessagingNavigate {

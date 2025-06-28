@@ -1,4 +1,4 @@
-import 'package:byzaar/core/language/app_Localizations.dart';
+import 'package:fruit_hub/core/language/app_Localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
