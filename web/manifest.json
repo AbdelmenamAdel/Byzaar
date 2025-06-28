@@ -1,6 +1,6 @@
 {
-    "name": "byzaar",
-    "short_name": "byzaar",
+    "name": "fruit_hub",
+    "short_name": "fruit_hub",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
