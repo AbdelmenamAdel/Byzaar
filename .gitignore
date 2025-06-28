@@ -34,8 +34,9 @@ migrate_working_dir/
 /build/
 .env.dev
 .env.prod
-android\app\src\main\AndroidManifest.xml
-android\app\src\main\res\values\strings.xml
+# Ignore Android manifest and strings
+android/app/src/main/AndroidManifest.xml
+android/app/src/main/res/values/strings.xml
 # Symbolication related
 app.*.symbols
 
