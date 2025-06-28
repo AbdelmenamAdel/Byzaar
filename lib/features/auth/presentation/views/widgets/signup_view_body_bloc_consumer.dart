@@ -1,4 +1,5 @@
 import 'package:fruit_hub/core/styles/extensions/context_extension.dart';
+import 'package:fruit_hub/core/utils/app_colors.dart';
 import 'package:fruit_hub/core/widgets/custom_snackbar.dart';
 import 'package:fruit_hub/features/auth/presentation/cubits/signup_cubits/signup_cubit.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,8 @@ class SignupViewBodyBlocConsumer extends StatelessWidget {
     return BlocConsumer<SignupCubit, SignupState>(
       listener: (context, state) {
         if (state is SignupSuccess) {
+          showBar(context, 'تم انشاء الحساب بنجاح',
+              color: AppColors.primaryColor);
           context.pop();
         }
         if (state is SignupFailure) {

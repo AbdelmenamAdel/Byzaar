@@ -1,5 +1,6 @@
 import 'package:fruit_hub/core/routes/app_routes.dart';
 import 'package:fruit_hub/core/styles/extensions/context_extension.dart';
+import 'package:fruit_hub/core/utils/app_colors.dart';
 import 'package:fruit_hub/core/widgets/custom_progress_hud.dart';
 import 'package:fruit_hub/core/widgets/custom_snackbar.dart';
 import 'package:fruit_hub/features/auth/presentation/cubits/signin_cubit/signin_cubit.dart';
@@ -17,6 +18,9 @@ class LoginViewBodyBlocConsumer extends StatelessWidget {
     return BlocConsumer<SigninCubit, SigninState>(
       listener: (context, state) {
         if (state is SigninSuccess) {
+          showBar(context, 'تم تسجيل الدخول بنجاح',
+              color: AppColors.primaryColor);
+
           context.pushReplacementNamed(AppRoutes.main);
         }
         if (state is SigninFailure) {
