@@ -1,7 +1,7 @@
 import 'package:fruit_hub/features/auth/domain/entites/user_entity.dart';
 import 'package:fruit_hub/features/auth/domain/repos/auth_repo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import 'dart:developer';
 part 'signin_state.dart';
 
 class SigninCubit extends Cubit<SigninState> {
@@ -32,6 +32,7 @@ class SigninCubit extends Cubit<SigninState> {
   Future<void> signinWithFacebook() async {
     emit(SigninLoading());
     var result = await authRepo.signinWithFacebook();
+    log(result.toString());
     result.fold(
       (failure) => emit(SigninFailure(message: failure.message)),
       (userEntity) => emit(SigninSuccess(userEntity: userEntity)),
