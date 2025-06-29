@@ -16,7 +16,12 @@ class LoginView extends StatelessWidget {
         sl.get<AuthRepo>(),
       ),
       child: Scaffold(
-        appBar: buildAppBar(context, title: 'تسجيل دخول'),
+        appBar: buildAppBar(
+          context,
+          title: 'تسجيل دخول',
+          showBackButton: false,
+          showNotification: false,
+        ),
         body: const LoginViewBodyBlocConsumer(),
       ),
     );

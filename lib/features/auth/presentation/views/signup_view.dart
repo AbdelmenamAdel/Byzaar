@@ -17,7 +17,7 @@ class SignupView extends StatelessWidget {
         sl<AuthRepo>(),
       ),
       child: Scaffold(
-        appBar: buildAppBar(context, title: 'انشاء حساب جديد'),
+        appBar: buildAppBar(context, title: 'انشاء حساب جديد', showNotification: false,),
         body: const SignupViewBodyBlocConsumer(),
       ),
     );
